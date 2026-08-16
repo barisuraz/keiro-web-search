@@ -1,0 +1,7 @@
+node_modules/
+lib/
+*.tgz
+*.log
+.env
+.DS_Store
+.credentials.yaml

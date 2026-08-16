@@ -3,25 +3,21 @@
   "version": "0.1.0",
   "description": "Keiro (KeiroLabs) search provider for the DeepSeek Harness web capability seam (ctx.web)",
   "type": "module",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
     },
     "./package.json": "./package.json"
   },
   "files": [
-    "lib",
+    "src",
     "README.md",
     "LICENSE"
   ],
-  "scripts": {
-    "build": "node scripts/build.js",
-    "prepare": "node scripts/build.js",
-    "prepack": "node scripts/build.js"
-  },
+  "scripts": {},
   "license": "MIT",
   "keywords": [
     "deepseek",
@@ -42,9 +38,6 @@
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "^3.18.1"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "repository": {
     "type": "git",

@@ -13,11 +13,16 @@ and does **not** register a model-facing tool. It is a DSH **provider plugin**
 
 ## Install
 
+Distributed from GitHub (no npm registry). Install directly from the repo into
+your profile:
+
 ```bash
-# From the profile you want it in (out-of-tree plugin, resolved from the
-# profile's node_modules):
-dsh plugin --profile web add @barisuraz/keiro-web-search
+# pnpm resolves the public repo via git+https; dsh plugin forwards to pnpm.
+dsh plugin --profile web add https://github.com/barisuraz/keiro-web-search.git
 ```
+
+> The plugin's entry is `src/` (no build step), so a git install works
+> directly; a later `dsh plugin --profile web update` pulls new commits.
 
 Then add this to the profile's `cordis.patch.yml` (`$DSH_HOME/profiles/web/cordis.patch.yml`):
 
@@ -105,9 +110,3 @@ curl -s "https://kierolabs.space/api/v2/search/fast" \
 ```
 
 Response: `{"query":"...","results":[{"title":"...","url":"...","snippet":"...","position":1,"score":1}, ...], "count":..., "creditsRemaining":...}`.
-
-## Develop / build
-
-```bash
-npm run build     # copies src/* -> lib/ (plain ESM + hand-written .d.ts)
-```
